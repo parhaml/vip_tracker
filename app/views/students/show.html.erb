@@ -3,3 +3,10 @@
 <h3><%= link_to "See All Students", students_path %></h3>
 
 <%= @student.name %> <%= link_to "Edit Student", edit_student_path %> <%= link_to "Delete Student", student_path, data: { confirm: "You sure?"}, method: :delete  %>
+
+
+<h4>Birthday</h4><br>
+<%= @student.birthday %>
+
+<h4>Age</h4><br>
+<%= @student.age %>
