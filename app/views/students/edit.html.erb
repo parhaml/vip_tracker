@@ -1,0 +1,11 @@
+<h1>Edit Student</h1>
+
+
+<%= form_for @student do |f| %>
+    <%= hidden_field_tag :id, :value => @student.id %>
+	<%= f.label :name %>:
+	<%= f.text_field :name %>
+
+
+	<%= f.submit %>
+<% end %>
