@@ -42,6 +42,21 @@ class StudentsController < ApplicationController
     end
   end
 
+  def add
+    @student = Student.find(params[:id])
+    @lessons = Lesson.all
+  end
+
+  def teach
+    @student = Student.find(params[:id])
+    @lesson = Lesson.find(params[:lesson]["name"].to_i)
+    if @student.lessons << @lesson
+      redirect_to @student, alert: "Lesson added successfully!"
+    else
+      redirect_to @student, alert: "Your Change was not saved"
+    end
+  end
+
 
 private
   def student_params
