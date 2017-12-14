@@ -1,0 +1,10 @@
+<h1>Add a new lesson</h1>
+
+<%= form_for @student, url: "/students/#{@student.id}/teach_lesson" do |f| %>
+
+	<%= fields_for(@lessons) do |lesson| %>
+		<%= lesson.select(:name, @lessons.collect{|l| [l.name, l.id]}) %>
+		<% end %>
+	<%= f.submit %>
+
+<% end %>

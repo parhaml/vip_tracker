@@ -1,0 +1,9 @@
+<h1><%= @lesson.name %></h1>
+
+<h2>Props</h2>
+
+<%= @lesson.props %>
+
+<p><%= link_to "Edit Lesson", edit_lesson_path %></p>
+<p><%= link_to "Delete Lesson", lesson_path, data: { confirm: "You sure?"}, method: :delete  %>
+<p><%=link_to "Back to Lessons", lessons_path %></p>

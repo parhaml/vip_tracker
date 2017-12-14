@@ -1,6 +1,6 @@
-<h1> Student Info </h1>
+<h1><%= @student.name %> </h1>
 
-<h3><%= link_to "See All Students", students_path %></h3>
+
 
 <%= @student.name %> <%= link_to "Edit Student", edit_student_path %> <%= link_to "Delete Student", student_path, data: { confirm: "You sure?"}, method: :delete  %>
 
@@ -10,3 +10,17 @@
 
 <h4>Age</h4><br>
 <%= @student.age %>
+
+
+<h4>Lessons Taught: </h4><br>
+<%= @student.lessons.count || 0 %>
+
+<% if @student.lessons.count > 0 %>
+	<% @student.lessons.each  do |lesson| %>
+		<li><%= link_to lesson.name, lesson %><%= " taught on: #{lesson.created_at.strftime('%m-%d-%Y')}" %></li>
+	<% end %>
+<% end %>
+<p><%= link_to "add a new lesson", "/students/#{@student.id}/teach_lesson" %></p>
+
+<h3><%= link_to "See All Students", students_path %></h3>
+

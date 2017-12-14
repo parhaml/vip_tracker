@@ -1,0 +1,12 @@
+<h1>Edit Lesson</h1>
+
+<%= form_for @lesson do |f| %>
+
+	<%= f.label :name %>:
+	<%= f.text_field :name %>
+
+	<%= f.label :props %>:
+	<%= f.text_area :props %>
+
+	<%= f.submit %>
+<% end %>
